@@ -8,26 +8,50 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="72dp"
-        android:layout_height="29dp"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintHorizontal_bias="0.299"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintVertical_bias="0.158" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="108dp"
-        android:layout_height="29dp"
-        android:text="TextView"
+        android:id="@+id/textView1"
+        android:layout_width="177dp"
+        android:layout_height="33dp"
+        android:text="人で割り勘する"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.794"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.176"
         tools:text="人で割り勘する" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.582" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

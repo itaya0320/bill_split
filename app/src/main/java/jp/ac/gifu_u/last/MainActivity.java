@@ -2,9 +2,14 @@ package jp.ac.gifu_u.last;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,5 +26,18 @@ public class MainActivity extends AppCompatActivity {
         adapter.add("4");
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(adapter);
+
+        TextView textview = findViewById(R.id.textView1);
+
+        TextView textview1 = findViewById(R.id.textView2);
+
+        final Button imageProductButton = (Button) findViewById(R.id.button);
+        imageProductButton.setOnClickListener((View view2) -> {
+            String selected = (String) spinner.getSelectedItem();
+            textview1.setText(selected);
+            startActivity(new Intent(getApplication(),Register.class).putExtra("key",(String) spinner.getSelectedItem()));
+        });
     }
+
+
 }
