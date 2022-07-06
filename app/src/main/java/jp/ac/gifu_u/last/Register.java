@@ -25,7 +25,7 @@ public class Register extends AppCompatActivity {
         number = (String) getIntent().getSerializableExtra("key");
         setContentView(R.layout.register);
         box = findViewById(R.id.scroll);
-        addMoney();
+        addPeople();
         final Button imageProductButton = (Button) findViewById(R.id.button2);
         imageProductButton.setOnClickListener((View view2) -> {
             for(int count = 0; count < list.size(); count++){
@@ -35,7 +35,7 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    void addMoney() {
+    void addPeople() {
         LinearLayout info = new LinearLayout(this);
         info.setOrientation(LinearLayout.VERTICAL);
         for (int count = 0; count < Integer.valueOf(number); count++) {
