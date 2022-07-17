@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Last">
         <activity
+            android:name=".EditPlus"
+            android:exported="false" />
+        <activity
             android:name=".Plus"
             android:exported="false" />
         <activity

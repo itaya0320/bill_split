@@ -17,46 +17,49 @@ import java.util.List;
 
 public class Menu extends AppCompatActivity{
 
-    private List<String> list = new ArrayList<>();
+    private List<String> viewdatas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        list = getIntent().getStringArrayListExtra("key1");
 
-        List<List<String>> list4 = new ArrayList<>();
-        List<String> in_list = new ArrayList<String>();
+        for(int i = 0 ; i < Register.data.size() ; i++) {
+            viewdatas.add(Register.data.get(i).way + ":" + Register.data.get(i).name + "が" + Register.data.get(i).money + "円");
+        }
 
-        in_list.add("1000");
-        in_list.add("aaa");
-
-        list4.add(in_list);
-
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list4);
-
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,viewdatas);
         ListView listView = (ListView)findViewById(R.id.listView);
         listView.setAdapter(adapter);
-
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Toast.makeText(Menu.this, "ok", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplication(), EditPlus.class).putExtra("number",i));
                     }
                 }
         );
 
-
-        TextView textview3 = findViewById(R.id.textView3);
-        textview3.setText(list.get(0));
-
         final Button imageProductButton = (Button) findViewById(R.id.button4);
         imageProductButton.setOnClickListener((
                         View view2) -> {
-                    startActivity(new Intent(getApplication(), Plus.class).putStringArrayListExtra("key2", (ArrayList<String>) list));
+                    startActivity(new Intent(getApplication(), Plus.class));
                 }
         );
+    }
+
+    private void calculate(){
+        int cnt = 0;
+        List<Integer> all = new ArrayList<>();
+        for(int i = 0; i < Register.people.size() ; i++){
+            for(int j = 0; j < Register.data.size() ; j ++){
+                if (Register.data.get(j).name == Register.people.get(i)){
+                    cnt += Integer.valueOf(Register.data.get(j).money);
+                }
+            }
+            all.add(cnt);
+            all.add(Register.people);
+            cnt = 0;
+        }
     }
 }

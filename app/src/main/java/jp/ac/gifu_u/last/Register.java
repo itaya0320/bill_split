@@ -16,8 +16,9 @@ public class Register extends AppCompatActivity {
 
     private String number;
     private LinearLayout box;
+    static public List<Plusdata> data = new ArrayList<>();
     List<EditText> list = new ArrayList<>();
-    List<String> list2 = new ArrayList<>();
+    static public List<String> people = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,9 @@ public class Register extends AppCompatActivity {
         final Button imageProductButton = (Button) findViewById(R.id.button2);
         imageProductButton.setOnClickListener((View view2) -> {
             for(int count = 0; count < list.size(); count++){
-                list2.add(String.valueOf(list.get(count).getText()));
+                people.add(String.valueOf(list.get(count).getText()));
             }
-            startActivity(new Intent(getApplication(), Menu.class).putStringArrayListExtra("key1", (ArrayList<String>) list2));
+            startActivity(new Intent(getApplication(), Menu.class));
         });
     }
 
