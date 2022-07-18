@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,11 +49,16 @@ public class EditPlus extends AppCompatActivity {
         editTextNumber.setText(Register.data.get(number).money);
 
         button.setOnClickListener(view -> {
-            plusdata.name=nameselecter.getSelectedItem().toString();
-            plusdata.way=editway.getText().toString();
-            plusdata.money=editTextNumber.getText().toString();
-            Register.data.set(number,plusdata);
-            startActivity(new Intent(getApplication(),Menu.class));
+            if(editTextNumber.getText().toString().equals("")){
+                Toast.makeText(this, "料金を入力してください", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                plusdata.name = nameselecter.getSelectedItem().toString();
+                plusdata.way = editway.getText().toString();
+                plusdata.money = editTextNumber.getText().toString();
+                Register.data.set(number, plusdata);
+                startActivity(new Intent(getApplication(), Menu.class));
+            }
         });
 
 
