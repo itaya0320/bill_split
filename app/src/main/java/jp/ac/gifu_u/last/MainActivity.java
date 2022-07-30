@@ -20,10 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        adapter.add("1");
         adapter.add("2");
         adapter.add("3");
         adapter.add("4");
+        adapter.add("5");
+        adapter.add("6");
+        adapter.add("7");
+        adapter.add("8");
+        adapter.add("9");
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(adapter);
 
